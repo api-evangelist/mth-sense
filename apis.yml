@@ -36,7 +36,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-12'
 image: https://mthsense.com/images/logo.svg
 tags:
 - Company
@@ -53,10 +53,16 @@ apis: []
 common:
 - type: DomainSecurity
   url: security/mth-sense-domain-security.yml
+- type: Plans
+  url: plans/mth-sense-plans-pricing.yml
+- type: LLMsTxt
+  url: llms/mth-sense-llms.txt
 - type: Website
   url: https://mthsense.com/
 - type: Login
   url: https://mthsense.com/login.html
+- type: FAQ
+  url: https://mthsense.com/faq.html
 - type: Support
   url: https://mthsense.com/contact.html
 maintainers:
@@ -65,7 +71,30 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 x-enrichment:
-  date: '2026-07-20'
+  date: '2026-08-12'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 3
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    RevSense sells a managed publisher yield-optimization service, not an interface —
+    its own FAQ describes RevSense using a publisher's handed-over ad-server and SSP
+    credentials to drive Google Ad Manager, OpenX and PubMatic on their behalf, and the
+    whole company web presence is a five-page static marketing site (last copyright
+    2017) where /openapi.json, /docs, /developers, /llms.txt and /robots.txt all 404,
+    every /.well-known/ path answers an Apache content-negotiation 300, and api.,
+    docs., developer., app., portal. and dashboard. subdomains are all NXDOMAIN.
+  evidence:
+  - url: https://mthsense.com/openapi.json
+    status: 404
+  - url: https://mthsense.com/developers
+    status: 404
+  - url: https://mthsense.com/.well-known/api-catalog
+    status: 300
+  - url: https://mthsense.com/faq.html
+    status: 200
+  - url: https://mthsense.com/pricing.html
+    status: 200
+  checked: '2026-08-12'

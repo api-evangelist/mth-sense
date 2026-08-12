@@ -1,0 +1,72 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTP probes of the only host in apis.yml (mthsense.com)
+host: https://mthsense.com
+note: >-
+  Every /.well-known/ path on mthsense.com answers HTTP 300 "Multiple Choices" —
+  the Apache mod_negotiation catch-all that the static marketing site returns for
+  any unmatched path under a directory, with an iso-8859-1 HTML body. None of them
+  return a document, so NO WellKnown or SecurityTxt pointer is emitted. Ordinary
+  missing paths (/robots.txt, /openapi.json) return a proper 404 with the site's
+  own HTML 404 page, which confirms the 300s are negotiation noise rather than
+  content. mthsense.com is the only host: api., app., docs., developer., dev.,
+  portal., dashboard., admin. and revsense. subdomains are all NXDOMAIN.
+documents:
+- path: /.well-known/security.txt
+  status: 300
+  content_type: text/html; charset=iso-8859-1
+  file: null
+- path: /.well-known/openid-configuration
+  status: 300
+  content_type: text/html; charset=iso-8859-1
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: 300
+  content_type: text/html; charset=iso-8859-1
+  file: null
+- path: /.well-known/api-catalog
+  status: 300
+  content_type: text/html; charset=iso-8859-1
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 300
+  content_type: text/html; charset=iso-8859-1
+  file: null
+- path: /.well-known/agent-card.json
+  status: 300
+  content_type: text/html; charset=iso-8859-1
+  file: null
+- path: /.well-known/agent.json
+  status: 300
+  content_type: text/html; charset=iso-8859-1
+  file: null
+contract_discovery:
+- path: /openapi.json
+  status: 404
+- path: /openapi.yaml
+  status: 404
+- path: /swagger.json
+  status: 404
+- path: /v1/openapi.json
+  status: 404
+- path: /api-docs
+  status: 404
+- path: /docs
+  status: 404
+- path: /redoc
+  status: 404
+- path: /graphql
+  status: 404
+- path: /llms.txt
+  status: 404
+- path: /api
+  status: 404
+- path: /developers
+  status: 404
+- path: /developer
+  status: 404
+- path: /robots.txt
+  status: 404
+- path: /sitemap.xml
+  status: 404
+result: no-documents-found

@@ -1,0 +1,40 @@
+generated: '2026-08-12'
+method: searched
+source: https://mthsense.com/faq.html
+plan_count: 0
+note: >-
+  RevSense (Mth Sense Inc.) publishes no usable plan or tier structure. A page does
+  exist at https://mthsense.com/pricing.html (HTTP 200), but it is an UNFILLED HTML
+  TEMPLATE: three identical tiers named "Starter", "Studio" and "Company", each
+  priced "$150 per month", each carrying the same placeholder feature bullets left
+  over from the purchased theme ("Radio Astronomy", "Look Up In The Sky", "The
+  Universe Through A Child's Eyes", "Asteroids", "The Amazing Hubble"), footed
+  "© 2015 by Mth Sense Inc." The page is not linked from the site's own navigation.
+  These are NOT real prices and are deliberately not recorded as plans, and no
+  `Pricing` pointer is wired to that URL — doing so would credit the provider with
+  published pricing it never actually wrote.
+plans: []
+commercial_model:
+- model: revenue-share
+  terms: 80/20 revenue share
+  applies_to: >-
+    Publishers who elect to run on RevSense's own SSP accounts rather than
+    connecting their own SSP accounts.
+  source: https://mthsense.com/faq.html
+  note: >-
+    The only concrete commercial term the company publishes anywhere. Stated in the
+    FAQ; no rate card, no self-serve checkout, and no other pricing is disclosed.
+- model: undisclosed
+  applies_to: Publishers using their own SSP / demand-partner accounts.
+  source: https://mthsense.com/faq.html
+placeholder_pricing_page:
+  url: https://mthsense.com/pricing.html
+  status: 200
+  verdict: unfilled-template
+  linked_from_navigation: false
+  copyright: '2015'
+evidence:
+- url: https://mthsense.com/pricing.html
+  status: 200
+- url: https://mthsense.com/faq.html
+  status: 200
